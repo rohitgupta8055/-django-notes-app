@@ -12,12 +12,18 @@ pipeline{
 
         stage("code clone"){
             steps{
-                echo "This is cloning the code!!!!"
+                echo "**************************************************"
+                echo "*********** CLONING THE CODE *********************"
+                echo "**************************************************"
+        
                 git url : "https://github.com/rohitgupta8055/-django-notes-app.git", branch : "main"
-                echo "Code clonning Successful!!!!!!!!"
-
+        
+                echo "**************************************************"
+                echo "******** CODE CLONING SUCCESSFUL *****************"
+                echo "**************************************************"
             }
         }
+        
         // stage("Code clone"){
         //     steps{
         //         sh "whoami"
