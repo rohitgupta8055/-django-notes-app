@@ -35,46 +35,6 @@ pipeline{
             }
         }
 
-        // stage("Push to DockerHub"){
-        //     steps{
-        //         script{
-        
-        //             echo '''
-        //             ██████╗     ██╗   ██╗    ███████╗    ██╗  ██╗
-        //             ██╔══██╗    ██║   ██║    ██╔════╝    ██║  ██║
-        //             ██████╔╝    ██║   ██║    ███████╗    ███████║
-        //             ██╔═══╝     ██║   ██║    ╚════██║    ██╔══██║
-        //             ██║          ╚██████╔╝    ███████║    ██║  ██║
-        //             ╚═╝           ╚═════╝     ╚══════╝    ╚═╝  ╚═╝
-        //             '''
-        
-        //             withCredentials([usernamePassword(
-        //                 credentialsId:'dockerHubCred',
-        //                 passwordVariable:'dockerHubPass',
-        //                 usernameVariable:'dockerHubUser')]){
-        
-        //                 def imageName = "notes-app"
-        //                 def imageVersion = "latest"
-        
-        //                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-        
-        //                 sh "docker image tag ${imageName}:${imageVersion} ${env.dockerHubUser}/${imageName}:${imageVersion}"
-        
-        //                 sh "docker push ${env.dockerHubUser}/${imageName}:${imageVersion}"
-        //             }
-        
-        //             echo '''
-        //             ███████╗    ██╗   ██╗     ██████╗     ██████╗    ███████╗    ███████╗    ███████╗    ██╗   ██╗    ██╗
-        //             ██╔════╝    ██║   ██║    ██╔════╝    ██╔════╝    ██╔════╝    ██╔════╝    ██╔════╝    ██║   ██║    ██║
-        //             ███████╗    ██║   ██║    ██║         ██║         █████╗      ███████╗    ███████╗    ██║   ██║    ██║
-        //             ╚════██║    ██║   ██║    ██║         ██║         ██╔══╝      ╚════██║    ╚════██║    ██║   ██║    ██║
-        //             ███████║    ╚██████╔╝    ╚██████╗    ╚██████╗    ███████╗    ███████║    ███████║    ╚██████╔╝    ███████╗
-        //             ╚══════╝     ╚═════╝      ╚═════╝     ╚═════╝    ╚══════╝    ╚══════╝    ╚══════╝     ╚═════╝     ╚══════╝
-        //             '''
-        //         }
-        //     }
-        // }
-
         stage("Push Docker Image"){
         
             steps{
